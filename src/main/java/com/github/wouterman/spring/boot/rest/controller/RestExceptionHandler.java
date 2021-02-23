@@ -1,8 +1,8 @@
 package com.github.wouterman.spring.boot.rest.controller;
 
-import lombok.extern.slf4j.Slf4j;
 import com.github.wouterman.spring.boot.rest.model.ApiError;
 import com.github.wouterman.spring.boot.rest.model.ResourceNotFoundException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;

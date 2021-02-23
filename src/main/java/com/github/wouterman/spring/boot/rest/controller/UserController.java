@@ -1,5 +1,9 @@
 package com.github.wouterman.spring.boot.rest.controller;
 
+import com.github.wouterman.spring.boot.rest.model.ApiError;
+import com.github.wouterman.spring.boot.rest.model.ResourceNotFoundException;
+import com.github.wouterman.spring.boot.rest.model.User;
+import com.github.wouterman.spring.boot.rest.repository.UserRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -12,10 +16,6 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 import lombok.extern.slf4j.Slf4j;
-import com.github.wouterman.spring.boot.rest.model.ApiError;
-import com.github.wouterman.spring.boot.rest.model.ResourceNotFoundException;
-import com.github.wouterman.spring.boot.rest.model.User;
-import com.github.wouterman.spring.boot.rest.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
