@@ -1,6 +1,5 @@
-package com.github.wouterman.spring.boot.rest.repository;
+package com.github.wouterman.spring.boot.rest.domain;
 
-import com.github.wouterman.spring.boot.rest.model.User;
 import org.springframework.data.repository.CrudRepository;
 
 public interface UserRepository extends CrudRepository<User, Long> {

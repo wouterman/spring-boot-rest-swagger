@@ -1,7 +1,7 @@
 package com.github.wouterman.spring.boot.rest;
 
-import com.github.wouterman.spring.boot.rest.model.User;
-import com.github.wouterman.spring.boot.rest.repository.UserRepository;
+import com.github.wouterman.spring.boot.rest.domain.User;
+import com.github.wouterman.spring.boot.rest.domain.UserRepository;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
 import lombok.extern.slf4j.Slf4j;

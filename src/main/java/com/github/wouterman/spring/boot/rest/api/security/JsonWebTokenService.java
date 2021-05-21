@@ -1,6 +1,6 @@
-package com.github.wouterman.spring.boot.rest.service;
+package com.github.wouterman.spring.boot.rest.api.security;
 
-import com.github.wouterman.spring.boot.rest.model.User;
+import com.github.wouterman.spring.boot.rest.domain.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.JwtException;

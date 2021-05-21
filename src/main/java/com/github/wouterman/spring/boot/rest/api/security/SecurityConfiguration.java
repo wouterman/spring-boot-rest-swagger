@@ -1,6 +1,5 @@
-package com.github.wouterman.spring.boot.rest.controller;
+package com.github.wouterman.spring.boot.rest.api.security;
 
-import com.github.wouterman.spring.boot.rest.service.JsonWebTokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -24,6 +23,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     http
         .authorizeRequests()
         .antMatchers(HttpMethod.POST, "/authenticate").permitAll()
+        .antMatchers(HttpMethod.GET, "/users").permitAll()
         .anyRequest().authenticated()
         .and()
         .addFilter(new JwtAuthorizationFilter(authenticationManager(), tokenService))
@@ -34,6 +34,4 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         // No cookies so don't need it.
         .csrf().disable();
   }
-
-
 }

@@ -17,6 +17,8 @@
     <h2.version>1.4.200</h2.version>
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     <jackson.version>2.12.1</jackson.version>
+    <jjwt.version>0.11.2</jjwt.version>
+    <postgresql.version>42.2.20</postgresql.version>
   </properties>
   <dependencies>
     <dependency>
@@ -40,6 +42,11 @@
       <version>${spring-boot-starter.version}</version>
     </dependency>
     <dependency>
+      <groupId>org.flywaydb</groupId>
+      <artifactId>flyway-core</artifactId>
+      <version>7.7.3</version>
+    </dependency>
+    <dependency>
       <groupId>org.springdoc</groupId>
       <artifactId>springdoc-openapi-ui</artifactId>
       <version>${springdoc-openapi-ui.version}</version>
@@ -56,20 +63,26 @@
       <scope>runtime</scope>
     </dependency>
     <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>${postgresql.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
       <groupId>io.jsonwebtoken</groupId>
       <artifactId>jjwt-api</artifactId>
-      <version>0.11.2</version>
+      <version>${jjwt.version}</version>
     </dependency>
     <dependency>
       <groupId>io.jsonwebtoken</groupId>
       <artifactId>jjwt-jackson</artifactId>
-      <version>0.11.2</version>
+      <version>${jjwt.version}</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>io.jsonwebtoken</groupId>
       <artifactId>jjwt-impl</artifactId>
-      <version>0.11.2</version>
+      <version>${jjwt.version}</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>

@@ -1,6 +1,5 @@
-package com.github.wouterman.spring.boot.rest.controller;
+package com.github.wouterman.spring.boot.rest.api.security;
 
-import com.github.wouterman.spring.boot.rest.service.JsonWebTokenService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import java.io.IOException;

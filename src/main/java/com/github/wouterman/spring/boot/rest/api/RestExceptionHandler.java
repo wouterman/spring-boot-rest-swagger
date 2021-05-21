@@ -1,7 +1,6 @@
-package com.github.wouterman.spring.boot.rest.controller;
+package com.github.wouterman.spring.boot.rest.api;
 
-import com.github.wouterman.spring.boot.rest.model.ApiError;
-import com.github.wouterman.spring.boot.rest.model.ResourceNotFoundException;
+import com.github.wouterman.spring.boot.rest.domain.UserNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.core.Ordered;
@@ -48,8 +47,8 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     return error.toResponseEntity();
   }
 
-  @ExceptionHandler(ResourceNotFoundException.class)
-  public ResponseEntity<Object> handleResourceNotFoundException(ResourceNotFoundException ex) {
+  @ExceptionHandler(UserNotFoundException.class)
+  public ResponseEntity<Object> handleUserNotFoundException(UserNotFoundException ex) {
     log.info("Caught {}.", ex.getClass());
     ApiError error = new ApiError(HttpStatus.NOT_FOUND, ex.getMessage());
     log.info("Returning {}.", error);

@@ -1,4 +1,4 @@
-package com.github.wouterman.spring.boot.rest.model;
+package com.github.wouterman.spring.boot.rest.api.security;
 
 import lombok.Value;
 

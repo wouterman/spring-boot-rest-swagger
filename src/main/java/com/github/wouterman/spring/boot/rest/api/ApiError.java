@@ -1,4 +1,4 @@
-package com.github.wouterman.spring.boot.rest.model;
+package com.github.wouterman.spring.boot.rest.api;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.media.Schema.AccessMode;

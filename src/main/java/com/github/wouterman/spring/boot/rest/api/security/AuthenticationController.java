@@ -1,9 +1,6 @@
-package com.github.wouterman.spring.boot.rest.controller;
+package com.github.wouterman.spring.boot.rest.api.security;
 
-import com.github.wouterman.spring.boot.rest.model.JwtToken;
-import com.github.wouterman.spring.boot.rest.model.User;
-import com.github.wouterman.spring.boot.rest.service.JsonWebTokenService;
-import com.github.wouterman.spring.boot.rest.service.UserAuthenticationService;
+import com.github.wouterman.spring.boot.rest.domain.User;
 import java.util.Base64;
 import java.util.Optional;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package com.github.wouterman.spring.boot.rest.controller;
+package com.github.wouterman.spring.boot.rest.api.security;
 
 import io.jsonwebtoken.JwtParser;
 import io.jsonwebtoken.Jwts;
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class AppConfig {
+public class BeanConfiguration {
 
   @Bean
   public Key jwtKey(@Value("${jwt.secretkey}") String secretString) {
@@ -22,4 +22,5 @@ public class AppConfig {
     return Jwts.parserBuilder()
         .setSigningKey(jwtKey).build();
   }
+
 }
