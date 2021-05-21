@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 @Schema(name = "User", description = "User response entity.", accessMode = AccessMode.READ_WRITE)
 public class UserDto {
 
+  @Schema(accessMode = AccessMode.READ_ONLY, description = "User id.")
   private Long id;
 
   @Schema(description = "User name.")
