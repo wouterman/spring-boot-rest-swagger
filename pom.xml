@@ -10,17 +10,29 @@
   <name>spring-boot-rest</name>
   <description>Demo project for Spring Boot Rest with SwaggerUI and https.</description>
   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>11</java.version>
-    <spring-boot-starter.version>2.4.3</spring-boot-starter.version>
-    <springdoc-openapi-ui.version>1.5.2</springdoc-openapi-ui.version>
+    <spring-boot-starter.version>2.5.1</spring-boot-starter.version>
+    <springdoc-openapi-ui.version>1.5.9</springdoc-openapi-ui.version>
     <lombok.version>1.18.20</lombok.version>
     <h2.version>1.4.200</h2.version>
-    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-    <jackson.version>2.12.1</jackson.version>
+    <jackson.version>2.12.3</jackson.version>
     <jjwt.version>0.11.2</jjwt.version>
-    <postgresql.version>42.2.20</postgresql.version>
+    <postgresql.version>42.2.21.jre7</postgresql.version>
     <mapstruct.version>1.4.2.Final</mapstruct.version>
     <lombok.binding.version>0.2.0</lombok.binding.version>
+    <flyway-core.version>7.10.0</flyway-core.version>
+    <!-- Maven plugin versions-->
+    <required-maven-version.version>3.6.3</required-maven-version.version>
+    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+    <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
+    <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
+    <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+    <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
+    <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
+    <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
+    <maven-enforcer-plugin.version>3.0.0-M3</maven-enforcer-plugin.version>
+    <maven-site-plugin.version>3.8.2</maven-site-plugin.version>
   </properties>
   <dependencies>
     <dependency>
@@ -46,12 +58,7 @@
     <dependency>
       <groupId>org.flywaydb</groupId>
       <artifactId>flyway-core</artifactId>
-      <version>7.7.3</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springdoc</groupId>
-      <artifactId>springdoc-openapi-ui</artifactId>
-      <version>${springdoc-openapi-ui.version}</version>
+      <version>${flyway-core.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springdoc</groupId>
@@ -161,6 +168,61 @@
             </exclude>
           </excludes>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>${maven-enforcer-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>enforce-maven</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireMavenVersion>
+                  <version>${required-maven-version.version}</version>
+                </requireMavenVersion>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>${maven-clean-plugin.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>${maven-resources-plugin.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-install-plugin</artifactId>
+        <version>${maven-install-plugin.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>${maven-deploy-plugin.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven-surefire-plugin.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>${maven-jar-plugin.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>${maven-site-plugin.version}</version>
       </plugin>
     </plugins>
   </build>
